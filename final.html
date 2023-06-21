@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" >
+    <title>StarStruck</title>
+    <link rel="icon" type="image/svg" href="./icons/algo.svg">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="./final.css"/>
+  </head>
+  <body>
+    <div class="guide">
+      <div class="screens">
+        <svg class = guideCanvas>
+            <!-- <circle id="outerCircle" class = "rotate" cx="40" cy="40" r="30" fill="url(#gradient)" opacity="0.05"/> -->
+        </svg>
+        <div class="guideHeading">
+          Add Star with a Click
+        </div>
+        <div class="guideSubHeading">
+          max star count is 10
+        </div>
+        <div class="guideControl">
+          <button type="button" name="button" id="prev">
+            <img src=".\icons\next.svg" alt="Prev">
+            <span>Prev</span>
+          </button>
+          <button type="button" name="button" id="next">
+            <img src=".\icons\prev.svg" alt="Next">
+            <span>Next</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="welcome">
+        <span class ="sub" >Welcome To</span>
+        <span class ="main">StarStruck</span>
+        <span class ="sub" >An Algorithmic Constellation</span>
+      </div>
+
+    </div>
+    <div class="playground">
+      <svg id ="canvas">
+        <defs>
+          <linearGradient id="gradient" x1="0%"  y1="100%" x2="100%" y2="0">
+            <stop offset="0%" style="stop-color:white; stop-opacity: 1"/>
+            <stop offset="100%" style="stop-color:white; stop-opacity: 1"/>
+          </linearGradient>
+
+          <g id="nodeTemplate" style="transform:scale(0.5);transform-box: fill-box; transform-origin: center">
+            <!-- <line x1="40" y1="40" x2="50" y2="50" stroke='yellow' stroke-width=5 stroke-linecap="round" opacity='1'></line> -->
+            <!-- <circle id="outerCircle" class = "rotate" cx="40" cy="40" r="30" fill="white" opacity="0.05"/>
+            <circle id="blankCircle" class = "rotate" cx="40" cy="40" r="20" fill="#252a2e" opacity="1"/>
+            <circle id="innerCircle" class = "rotate" cx="40" cy="40" r="20" fill="white" opacity="0.15"/> -->
+
+            <circle id="outerCircle" class = "rotate" cx="40" cy="40" r="30" fill="white" opacity="0.05"/>
+            <circle id="blankCircle" class = "rotate" cx="40" cy="40" r="20" fill="#252a2e" opacity="1"/>
+            <circle id="innerCircle" class = "rotate" cx="40" cy="40" r="20" fill="white" opacity="0.15"/>
+            <!-- <path id="starBase" d="M 40 0 C 40 35 35 40 0 40 C 35 40 40 45 40 80 C 40 45 45 40 80 40 C 45 40 40 35 40 0" stroke="none" fill="black"/> -->
+            <path id="star" d="M 40 0 C 40 35 35 40 0 40 C 35 40 40 45 40 80 C 40 45 45 40 80 40 C 45 40 40 35 40 0" stroke="none" fill="white" opacity="0.3"/>
+          </g>
+          <g id="linkTemplate">
+            <line id = "linkProjection" x1="40" y1="40" x2="40" y2="40" stroke='white' stroke-width=14 stroke-linecap="round" opacity='0'></line>
+            <line id = "actualLink" x1="40" y1="40" x2="40" y2="40" stroke='white' stroke-width=2 stroke-linecap="round" opacity='0.05'></line>
+            <!-- <line x1="40" y1="40" x2="40" y2="40" stroke='red' stroke-width=15 stroke-linecap="round" opacity='1'></line> -->
+          </g>
+        </defs>
+        <line id="activeLink" x1 = -10 y1 = -10 x2 = -10 y2 = -10 stroke = "white" stroke-width= 5 opacity="0.5" stroke-linecap="round"></line>
+        <g id="links-group"></g>
+        <g id="nodes-group"></g>
+
+      </svg>
+      <div id="heading">StarStruck
+        <!-- <span id = "algoName"></span> -->
+      </div>
+      <div class="toolbox">
+        <div class="tool" id="guide">
+          <img  class = "toolImg" src=".\icons\guide.svg" alt="Guide">
+          <span class = "toolSpan">Guide</span>
+        </div>
+        <div class="tool" id="reset">
+          <img class = "toolImg" src=".\icons\reset.svg" alt="Reset">
+          <span class = "toolSpan">Reset</span>
+        </div>
+        <div class="tool" id="play">
+          <img class = "toolImg">
+           <!-- src=".\icons\play.svg" alt="Play"> -->
+          <span class = "toolSpan"></span>
+        </div>
+        <div class="tool" id="algo" >
+          <img class = "toolImg" src=".\icons\algo.svg" alt="Algo">
+          <span class = "toolSpan">Algo</span>
+          <span class = "toolSpan" id="algoNameBubble"></span>
+          <!-- <svg id="selectAlgo"></svg> -->
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="final.js"></script>
+
+  </body>
+</html>
