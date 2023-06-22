@@ -611,6 +611,7 @@ async function playClick(){
 
   disableMouseEvents();
 
+  fadeHeading(true);
   disableControlButtonEvent("guide");
   disableControlButtonEvent("reset");
   disableControlButtonEvent("play");
@@ -620,6 +621,7 @@ async function playClick(){
 
   if(currAlgorithm == 0){
       bindMouseEvents();
+      fadeHeading(false);
       enableControlButtonEvent("guide");
       enableControlButtonEvent("reset");
       enableControlButtonEvent("algo");
@@ -1310,5 +1312,9 @@ async function animateAlgorithmNameDisplay(){
     .style("opacity", 0)
 }
 
+function fadeHeading(isActive){
+  d3.select("#heading")
+  .classed("fadedHeading", isActive)
+}
 
 init()
