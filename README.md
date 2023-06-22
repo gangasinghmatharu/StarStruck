@@ -7,9 +7,9 @@ It leverages d3 Force Directed Graphs for simulating physical forces on particle
 Build you stellar creation and traverse through the stars!
 
 
-<img src="guide/g7.png" alt="add star" width="500px" >
-<img src="guide/g5.png" alt="add star" width="500px" >
-<img src="guide/g6.png" alt="add star" width="500px" >
+<img src="guide/g7.png" alt="add star" width="700px" >
+<img src="guide/g5.png" alt="add star" width="700px" >
+<img src="guide/g6.png" alt="add star" width="700px" >
 
 ## 1. Add Star with a Click
 - Add stars to your constellation by simply clicking on the canvas.
